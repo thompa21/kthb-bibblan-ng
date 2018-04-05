@@ -11,7 +11,11 @@
 
 /* give credit in "credits" page */
 .flaticon {
-    font-family: "flaticon";
+    font-family: "flaticon", "Flaticon1";
+}
+
+.flaticon-users-relation:before {
+	content: "\e05f";
 }
 
  // Common page class
