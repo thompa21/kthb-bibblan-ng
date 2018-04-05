@@ -1,0 +1,9 @@
+<StackLayout visibility="{{ 1==1 ? 'visible' : 'collapsed' }}">
+    <GridLayout rows="75 * 50" sdkExampleTitle sdkToggleNavButton visibility="{{ loggedin ? 'visible' : 'collapsed' }}">
+        <WebView row="1" #myWebView [src]="webViewSrc"></WebView>
+        <Label row="2" #labelResult></Label>
+    </GridLayout>
+    <GridLayout rows="75 * 50" sdkExampleTitle sdkToggleNavButton visibility="{{ loggedin ? 'collapsed' : 'visible' }}">
+        <Button class="btn btn-primary w-full" text="Login" (tap)="login()"></Button>
+    </GridLayout>
+</StackLayout>
