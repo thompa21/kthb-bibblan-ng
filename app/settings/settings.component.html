@@ -1,0 +1,29 @@
+<!--ActionBar class="action-bar">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Home"></Label>
+</ActionBar-->
+
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="Settings"></MyDrawer>
+    </StackLayout>
+        <GridLayout columns="*,*,*,*" rows="auto, auto, *" class="page page-content" tkMainContent>
+            <GridLayout class="app-header home" colSpan="4" columns="auto,auto,*">
+                <Label style="padding-left:10;" text="Logo" col="0" horizontalAlignment="left" verticalAlignment="center" class="actionbartext"></Label>
+                <Label style="padding-left:10;" text="KTH Biblioteket" col="1" horizontalAlignment="left" verticalAlignment="center" class="actionbartext"></Label>
+                <Label text="&#xe87c;" class="mdi drawerbutton" col="2" horizontalAlignment="right" verticalAlignment="center" (tap)="onDrawerButtonTap()"></Label>
+            </GridLayout>
+            <StackLayout colSpan="4" row="1">
+                <Label text="Inställningar" row="2" colSpan="2" horizontalAlignment="center" verticalAlignment="center" class="content-header"></Label>
+            </StackLayout>
+            <GridLayout row="2" colSpan="4" rows="*" columns="*,*,*,*" class="bottom-bar" verticalAlignment="bottom">
+                <Label route="/home" (tap)="onNavItemTap('/home')" col="0" verticalAlignment="center" horizontalAlignment="center" text="&#xE88A;" class="mdi"></Label>
+                <Label route="/grouproom" (tap)="onNavItemTap('/grouproom')" col="1" verticalAlignment="center" horizontalAlignment="center" text="&#xE05F;" class="flaticon"></Label>
+                <Label route="/tandem" (tap)="onNavItemTap('/tandem')" col="2" verticalAlignment="center" horizontalAlignment="center" text="&#xE040;" class="flaticon"></Label>
+                <Label col="4" verticalAlignment="center" horizontalAlignment="center" text="&#xE8B8;" class="mdi bottom-active"></Label>
+            </GridLayout>
+        </GridLayout>
+</RadSideDrawer>

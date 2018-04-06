@@ -1,0 +1,79 @@
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+// Font icon class
+.fa {
+    font-family: "FontAwesome";
+ }
+
+.mdi {
+    font-family: "Material Icons", "MaterialIcons-Regular";
+}
+
+/* give credit in "credits" page */
+.flaticon {
+    font-family: "flaticon", "Flaticon1";
+}
+
+.flaticon-users-relation:before {
+	content: "\e05f";
+}
+
+ // Common page class
+ .page-content {
+    background-color: rgba(0, 0, 0, 0.925);
+    color: #fff;
+
+     .page-placeholder {
+         color: $page-icon-color;
+         font-size: $page-content-placeholder-font-size;
+         vertical-align: center;
+         horizontal-align: center;
+     }
+ 
+     .page-icon {
+         font-size: 72;
+         vertical-align: top;
+         horizontal-align: center;
+         color: $page-icon-color;
+         margin-top: 20%;
+     }
+ }
+ 
+ //Action bar
+ ActionBar .action-bar-title {
+     horizontal-align: center;
+ }
+
+ .app-header {
+    padding: 10;
+    color: rgb(17, 17, 17);
+    font-family: "Arial";
+    font-size: 24;
+}
+
+.app-header.home {
+    background-color: rgb(247, 247, 247);
+}
+
+.drawerbutton {
+    font-size: 30;
+}
+
+.content-header {
+    font-size: 20;
+    padding: 10 0;
+    font-family: "Arial";
+    color: rgb(221, 221, 221);
+}
+
+.bottom-bar {
+    height:50;
+    color:#a1a1a1ad;
+    margin:0;
+    background-color:rgb(255, 255, 255);
+    font-size:40;
+}
+
+.bottom-active {
+    color:#1954a6;
+}
