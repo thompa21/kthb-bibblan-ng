@@ -15,6 +15,7 @@ import {Page} from "ui/page";
     templateUrl: "./home.component.html",
     providers: [HttpGetService]
 })
+
 export class HomeComponent implements OnInit {
     /* ***********************************************************
     * Use the @ViewChild decorator to get a reference to the drawer component.
