@@ -24,7 +24,9 @@
                         <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
                             <GridLayout rows="*,auto" columns="*,*" style="font-size:20;" height="30" [class.odd]="odd" [class.even]="even">
                                 <Label row="0" [text]='"index: " + i'></Label>
-                                <Label row="0" col="1" [text]='item.hours.status'></Label>
+                                <Label row="0" col="1" [text]='item.hour08'></Label>
+                                <Label row="0" col="1" [text]='item.hour09'></Label>
+                                <Label row="0" col="1" [text]='item.hour10'></Label>
                                 <StackLayout row="1" colSpan="2" backgroundColor="#708090" height="1"></StackLayout>
                             </GridLayout>
                         </ng-template>
