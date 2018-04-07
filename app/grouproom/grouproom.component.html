@@ -18,20 +18,36 @@
                 <Label text="&#xe87c;" class="mdi drawerbutton" col="2" horizontalAlignment="right" verticalAlignment="center" (tap)="onDrawerButtonTap()"></Label>
             </GridLayout>
             <!-- Page Content -->
-            <StackLayout colSpan="4" row="1">
+            <GridLayout colSpan="4" row="1" rows="auto,*">
                     <Label text="Grupprum" row="0" horizontalAlignment="center" verticalAlignment="center" class="content-header"></Label>
-                    <ListView height="200" row="1" style="separator-color: transparent; background-color: rgba(100,100,100,0.700)" [items]="bookings" (itemTap)="onItemTap($event)">
+                    <ListView row="1" style="separator-color: transparent;" [items]="bookings" (itemTap)="onItemTap($event)">
                         <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-                            <GridLayout rows="*,auto" columns="*,*" style="font-size:20;" height="30" [class.odd]="odd" [class.even]="even">
-                                <Label row="0" [text]='"index: " + i'></Label>
-                                <Label row="0" col="1" [text]='item.hour08'></Label>
-                                <Label row="0" col="1" [text]='item.hour09'></Label>
-                                <Label row="0" col="1" [text]='item.hour10'></Label>
-                                <StackLayout row="1" colSpan="2" backgroundColor="#708090" height="1"></StackLayout>
+                            <GridLayout rows="*,*,*,*,*" columns="*" style="font-size:20;" [class.odd]="odd" [class.even]="even">
+                                <Label row="0" [text]='item.room'></Label>
+                                <Image height="200" stretch="aspectFill" row="1" src="http://web.wagnerform.se/wagnerguide/flash/guide/KTHLibrary/uploads/images/DSC03223.JPG"></Image>
+                                <GridLayout row="2" rows="auto" colSpan="2" columns="*,*,*,*,*,*,*" style="font-size:20;color:#000">
+                                    <Label row="0" col="0" textWrap="true" text='08' class="hour {{'booking-' + item.hour_08}}"></Label>
+                                    <Label row="0" col="1" textWrap="true" text='09' class="hour {{'booking-' + item.hour_09}}"></Label>
+                                    <Label row="0" col="2" textWrap="true" text='10' class="hour {{'booking-' + item.hour_10}}"></Label>
+                                    <Label row="0" col="3" textWrap="true" text='11' class="hour {{'booking-' + item.hour_11}}"></Label>
+                                    <Label row="0" col="4" textWrap="true" text='12' class="hour {{'booking-' + item.hour_12}}"></Label>
+                                    <Label row="0" col="5" textWrap="true" text='13' class="hour {{'booking-' + item.hour_13}}"></Label>
+                                    <Label row="0" col="6" textWrap="true" text='14' class="hour {{'booking-' + item.hour_14}}"></Label>
+                                </GridLayout>
+                                <GridLayout row="3" rows="*" colSpan="2" columns="*,*,*,*,*,*,*" style="font-size:20;color:#000">
+                                    <Label row="0" col="0" textWrap="true" text='15' class="hour {{'booking-' + item.hour_15}}"></Label>
+                                    <Label row="0" col="1" textWrap="true" text='16' class="hour {{'booking-' + item.hour_16}}"></Label>
+                                    <Label row="0" col="2" textWrap="true" text='17' class="hour {{'booking-' + item.hour_17}}"></Label>
+                                    <Label row="0" col="3" textWrap="true" text='18' class="hour {{'booking-' + item.hour_18}}"></Label>
+                                    <Label row="0" col="4" textWrap="true" text='19' class="hour {{'booking-' + item.hour_19}}"></Label>
+                                    <Label row="0" col="5" textWrap="true" text='20' class="hour {{'booking-' + item.hour_20}}"></Label>
+                                    <Label row="0" col="6" textWrap="true" text='21' class="hour booking-closed"></Label>
+                                </GridLayout>
+                                <StackLayout row="4" colSpan="2" backgroundColor="#708090" height="1"></StackLayout>
                             </GridLayout>
                         </ng-template>
                     </ListView>
-            </StackLayout>
+            </GridLayout>
             <!-- App Navigation Bottom Bar -->
             <GridLayout row="2" colSpan="4" rows="*" columns="*,*,*,*" class="bottom-bar" verticalAlignment="bottom">
                 <Label route="/home" (tap)="onNavItemTap('/home')" col="0" verticalAlignment="center" horizontalAlignment="center" text="&#xF015;" class="fa"></Label>

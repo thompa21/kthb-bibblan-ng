@@ -77,3 +77,24 @@
 .bottom-active {
     color:#1954a6;
 }
+
+.hour {
+    /*horizontal-align: center;*/
+    vertical-align: center;
+}
+
+.booking-free{
+    background-color: rgb(85, 252, 127);
+}
+
+.booking-tentative{
+    background-color: rgb(252, 199, 85);
+}
+
+.booking-busy{
+    background-color: rgb(252, 85, 85);
+}
+
+.booking-closed{
+    background-color: rgb(100, 100, 100);
+}

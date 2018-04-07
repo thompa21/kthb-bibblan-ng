@@ -84,6 +84,7 @@ export class GrouproomComponent implements OnInit {
             .subscribe(
                 (result) => {
                 this.bookings = result;
+                
                 console.log(JSON.stringify(this.bookings));
             }, (error) => {
                 console.log(error);
