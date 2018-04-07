@@ -26,6 +26,7 @@ export class GrouproomComponent implements OnInit {
     private _sideDrawerTransition: DrawerTransitionBase;
 
     public myItems: Array<any>;
+    public bookings: Array<any>;
 
     constructor(
         private routerExtensions: RouterExtensions,
@@ -33,7 +34,8 @@ export class GrouproomComponent implements OnInit {
         private GetService: HttpGetService
     ) {
         this.myItems = [];
-        
+        this.bookings = [];
+        /*
         for (var i = 0; i < 50; i++) {
             this.myItems.push({
                 roomnumber: 'Hello',
@@ -41,7 +43,7 @@ export class GrouproomComponent implements OnInit {
               });
         }
         console.dir(this.myItems);
-        
+        */
     }
 
     /* ***********************************************************
@@ -50,7 +52,7 @@ export class GrouproomComponent implements OnInit {
     ngOnInit(): void {
         this.page.actionBarHidden = true;
         this._sideDrawerTransition = new SlideInOnTopTransition();
-        //this.getRoomBookings();
+        this.getRoomBookings();
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
@@ -74,11 +76,15 @@ export class GrouproomComponent implements OnInit {
     }
 
     getRoomBookings() {
+        let bookingarr = [];
+        let json = "";
+        let isfirst = true;
+        let isfirstroom = true;
         this.GetService.getRoomBookings('2018-04-06')
             .subscribe(
                 (result) => {
-                console.dir(result);
-                this.myItems = result;
+                this.bookings = result;
+                console.log(JSON.stringify(this.myItems));
             }, (error) => {
                 console.log(error);
             });

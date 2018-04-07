@@ -20,12 +20,13 @@
             <!-- Page Content -->
             <StackLayout colSpan="4" row="1">
                     <Label text="Grupprum" row="0" horizontalAlignment="center" verticalAlignment="center" class="content-header"></Label>
-                    <ListView row="1" [items]="myItems" (itemTap)="onItemTap($event)">
+                    <ListView height="200" row="1" style="separator-color: transparent; background-color: rgba(100,100,100,0.700)" [items]="bookings" (itemTap)="onItemTap($event)">
                         <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-                            <StackLayout [class.odd]="odd" [class.even]="even">
-                                <Label [text]='"index: " + i'></Label>
-                                <Label [text]='"[" + item.roomnumber +"] " + item.roomname'></Label>
-                            </StackLayout>
+                            <GridLayout rows="*,auto" columns="*,*" style="font-size:20;" height="30" [class.odd]="odd" [class.even]="even">
+                                <Label row="0" [text]='"index: " + i'></Label>
+                                <Label row="0" col="1" [text]='item.hours.status'></Label>
+                                <StackLayout row="1" colSpan="2" backgroundColor="#708090" height="1"></StackLayout>
+                            </GridLayout>
                         </ng-template>
                     </ListView>
             </StackLayout>

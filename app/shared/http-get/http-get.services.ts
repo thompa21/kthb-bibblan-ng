@@ -34,7 +34,7 @@ export class HttpGetService {
         */
         //lumen API
         //TODO hämta jwttoken
-        const url = `${this.webserviceUrl}mrbs/api/v1/getroombookings/?bookingdate=${bookingdate}&area_id=${areaid}&token=${applicationSettingsModule.getString('jwttoken')}`;
+        const url = `${this.webserviceUrl}mrbs/api/v1/getbookings/?bookingdate=${bookingdate}&area_id=${areaid}&token=${applicationSettingsModule.getString('jwttoken')}`;
         //return this.http.get(this.serverUrl + "bookings", options)
         return this.http.get(url)
             .map(res => res.json())
