@@ -41,6 +41,24 @@ export class HttpGetService {
             //.catch(this.handleErrorObservable);
     }
 
+    createBooking(name,create_by,start_time,end_time,entry_type,room_id,modified_by,type,status,lang) {
+        console.log("HttpGetServices - getRoomBookings");
+        let areaid = "2";
+        
+        let headers = this.createRequestHeader();
+        let params: URLSearchParams = new URLSearchParams();
+        params.set("room_id", room_id);
+        params.set("start_time", start_time);
+        let options = new RequestOptions({ headers: headers, search: params });
+        //lumen API
+        //TODO hämta jwttoken
+        const url = `${this.webserviceUrl}mrbs/api/v1/entries/?start_time=${start_time}&end_time=${end_time}&token=${applicationSettingsModule.getString('jwttoken')}`;
+        //return this.http.get(this.serverUrl + "bookings", options)
+        return this.http.post(url,options)
+            .map(res => res.json())
+            //.catch(this.handleErrorObservable);
+    }
+
     getRoomsforarea(areaid: number): RxObservable<any[]> {
         //lumen API
         //TODO hämta jwttoken

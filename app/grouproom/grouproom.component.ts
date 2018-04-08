@@ -84,7 +84,7 @@ export class GrouproomComponent implements OnInit {
             .subscribe(
                 (result) => {
                 this.bookings = result;
-                
+
                 console.log(JSON.stringify(this.bookings));
             }, (error) => {
                 console.log(error);
@@ -93,5 +93,11 @@ export class GrouproomComponent implements OnInit {
 
     public onItemTap(args) {
         console.log("------------------------ ItemTapped: " + args.index);
+        
+        this.routerExtensions.navigate(['createbooking', args], {
+            transition: {
+                name: "fade"
+            }
+        });
     }
 }
